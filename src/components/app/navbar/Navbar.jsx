@@ -16,6 +16,7 @@ class Navbar extends React.Component {
                   </div>
                 </Link>
 
+<<<<<<< HEAD
                 <ul className="header_nav">
                   <li className="header_nav-item">
                     <Link to="/" className="header_nav-link">
@@ -33,6 +34,23 @@ class Navbar extends React.Component {
                       Sobre Nosotros
                     </Link>
                   </li>
+=======
+                                <ul className="header__nav">
+                                    <li className="header__nav-item">
+                                        <a href="home.html" className="header__nav-link">Inicio</a>
+                                        <Link to='/' className="header__nav-link"></Link>
+                                    </li>
+                                    <li className="header__nav-item">
+                                        <a href="catalog.html" className="header__nav-link">Catalogo</a>
+                                        <Link to='/' className="header__nav-link"></Link>
+                                    </li>
+
+                                    <li className="header__nav-item">
+                                        <a href="help.html" className="header__nav-link">Ayuda</a>
+                                        <Link to='/' className="header__nav-link"></Link>
+                                    </li>
+                                </ul>
+>>>>>>> bf10cd7... Arreglo links del header y footer.
 
                   <li className="header_nav-item">
                     <Link to="/help" className="header_nav-link">
@@ -56,9 +74,18 @@ class Navbar extends React.Component {
                     </button>
                   </form>
 
+<<<<<<< HEAD
                   <button className="header_search-btn" type="button">
                     <i className="icon ion-ios-search"></i>
                   </button>
+=======
+                                    <a href="signin.html" className="header__sign-in">
+                                        <i className="icon ion-ios-log-in"></i>
+                                        <span>Ingresar</span>
+                                    </a>
+                                    <Link to='/' className="header__sign-in"></Link>
+                                </div>
+>>>>>>> bf10cd7... Arreglo links del header y footer.
 
                   <Link to="/signin" className="header_sign-in">
                     <i className="icon ion-ios-log-in"></i>
