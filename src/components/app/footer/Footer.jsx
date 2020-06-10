@@ -21,19 +21,11 @@ class Footer extends React.Component {
                   <br />
                 </span>
 
-<<<<<<< HEAD
                 <nav className="footer__nav">
                   <Link to="/about_us">Nosotros</Link>
                   <Link to="/contact">Contacto</Link>
                   <Link to="/privacy_policy">Política de Privacidad</Link>
                 </nav>
-=======
-                                <nav class="footer__nav">
-                                    <Link to='/'>Nosotros</Link>
-                                    <Link to='/'>Contacto</Link>
-                                    <Link to='/'>Política de Privacidad</Link>
-                                </nav>
->>>>>>> bf10cd7... Arreglo links del header y footer.
 
                 <button className="footer__back" type="button">
                   <i className="icon ion-ios-arrow-round-up"></i>
