@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.3.0/css/ionicons.min.css"
+      integrity="sha256-KOWe2UVbwJvQnoJFXd3RbeOt5Ulf4YhkdG6s+4yFE2k="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="body">
+    <div class="sign section--bg" data-bg="img/section/section.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="sign__content">
+              <!-- authorization form -->
+              <form action="#" class="sign__form">
+                <a href="index.html" class="sign__logo">
+                  <img src="img/logo.svg" alt="" />
+                </a>
+
+                <div class="sign__group">
+                  <input type="text" class="sign__input" placeholder="Email" />
+                </div>
+
+                <div class="sign__group">
+                  <input
+                    type="password"
+                    class="sign__input"
+                    placeholder="Password"
+                  />
+                </div>
+
+                <div class="sign__group sign__group--checkbox">
+                  <input
+                    id="remember"
+                    name="remember"
+                    type="checkbox"
+                    checked="checked"
+                  />
+                  <label for="remember">Remember Me</label>
+                </div>
+
+                <button class="sign__btn" type="button">Sign in</button>
+
+                <span class="sign__text"
+                  >Don't have an account?
+                  <a href="signup.html">Sign up!</a></span
+                >
+
+                <span class="sign__text"
+                  ><a href="forgot.html">Forgot password?</a></span
+                >
+              </form>
+              <!-- end authorization form -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        "use strict";
+        $(".header__btn").on("click", function () {
+          $(this).toggleClass("header__btn--active");
+          $(".header__nav").toggleClass("header__nav--active");
+          $(".body").toggleClass("body--active");
+        });
+
+        $(".header__search-btn, .header__search-close").on(
+          "click",
+          function () {
+            $(".header__search").toggleClass("header__search--active");
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
