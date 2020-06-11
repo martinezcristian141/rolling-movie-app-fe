@@ -1,58 +1,57 @@
 import React from "react";
-import "./Signin.css";
+import "../../app/main.css";
 
 class Signin extends React.Component {
   render() {
     return (
       <>
-        <body class="body">
-          <div class="sign section--bg" data-bg="img/section/section.jpg">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <div class="sign__content">
-                    <form action="#" class="sign__form">
-                      <a href="index.html" class="sign__logo">
-                        <img src="img/logo.svg" alt="" />
-                      </a>
+        <body className="body">
+          <div className="sign contactbg">
+            <div className="container">
+              <div className="row">
+                <div className="col-12">
+                  <div className="sign__content">
+                    <form action="#" className="sign__form">
+                      <div className="logosign logo">
+                        <span className="highlight">ROLLING</span>MOVIE
+                      </div>
 
-                      <div class="sign__group">
+                      <div className="sign__group">
                         <input
                           type="text"
-                          class="sign__input"
+                          className="sign__input"
                           placeholder="Email"
                         />
                       </div>
 
-                      <div class="sign__group">
+                      <div className="sign__group">
                         <input
                           type="password"
-                          class="sign__input"
-                          placeholder="Password"
+                          className="sign__input"
+                          placeholder="Contraseña"
                         />
                       </div>
 
-                      <div class="sign__group sign__group--checkbox">
+                      <div className="sign__group sign__group--checkbox">
                         <input
                           id="remember"
                           name="remember"
                           type="checkbox"
                           checked="checked"
                         />
-                        <label for="remember">Remember Me</label>
+                        <label for="remember">Recuerdame</label>
                       </div>
 
-                      <button class="sign__btn" type="button">
-                        Sign in
+                      <button className="sign__btn" type="button">
+                        Ingresa
                       </button>
 
-                      <span class="sign__text">
-                        Don't have an account?{" "}
-                        <a href="signup.html">Sign up!</a>
+                      <span className="sign__text">
+                        ¿No tienes una cuenta? <a href="/signup">Regístrate!</a>
                       </span>
 
-                      <span class="sign__text">
-                        <a href="forgot.html">Forgot password?</a>
+                      <span className="sign__text">
+                        <a href="/forgot">¿Olvidaste tu contraseña?</a>
                       </span>
                     </form>
                   </div>
