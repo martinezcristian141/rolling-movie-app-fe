@@ -33,7 +33,7 @@ class Movie extends React.Component {
                     <div className="card__content">
                       <ul className="card__meta">
                         <li>
-                          <span>Director:</span> Vince Gilligan
+                          <span>Director:</span> {this.state.movie.director || 'Vince Gilligan'}
                         </li>
                         <li>
                           <span>Actores:</span>
@@ -47,10 +47,10 @@ class Movie extends React.Component {
                           <span>Release year:</span> 2019
                         </li>
                         <li>
-                          <span>Running time:</span> 130 min
+                          <span>Running time:</span> {this.state.movie.time}
                         </li>
                         <li>
-                          <span>Country:</span> <a href="/#">USA</a>
+                          <span>Country:</span> <a href="/#">{this.state.movie.country}</a>
                         </li>
                       </ul>
                       <div className="card__description">{this.state.movie.synopsis}</div>
@@ -117,6 +117,7 @@ class Movie extends React.Component {
     
     MovieApi.getMovie(id).then(movie => {
       let state = this.state;
+      movie.genres = movie.genres || []
       state.movie = movie;
       this.setState(state)
     })
