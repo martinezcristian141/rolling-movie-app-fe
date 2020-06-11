@@ -1,57 +1,59 @@
-import React from 'react'
-import './ListMovies.css'
-import './MovieCard.css'
-import MovieApi from '../../../services/MovieApi'
-import MovieCard from './MovieCard'
+import React from "react";
+import "./ListMovies.css";
+import "./MovieCard.css";
+import MovieApi from "../../../services/MovieApi";
+import MovieCard from "./MovieCard";
 
 class ListMovies extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: []
-    }
+      movies: [],
+    };
   }
 
   render() {
-    // lisMovies es un Array de elementos de React.
     const listMovies = this.state.movies.map((movie) => {
-      return <MovieCard movie={movie} key={movie._id} />
-    })
+      return <MovieCard movie={movie} key={movie._id} />;
+    });
     return (
-      <section className="content">
-        <div className="content__head">
+      <>
+        <section className="section section--first section--bg contactbg">
           <div className="container">
             <div className="row">
               <div className="col-12">
-                {/* content title */}
-                <h2 className="content__title">New items</h2>
-                {/* end content title */}
+                <div className="section__wrap">
+                  <h2 className="section__title">Nuevas Películas</h2>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="container">
-          {/* content tabs */}
-          <div className="tab-content">
-            <div className="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
-              <div className="row">
-                {listMovies}
+        <section>
+          <div className="container">
+            <div className="tab-content">
+              <div
+                className="tab-pane fade show active"
+                id="tab-1"
+                role="tabpanel"
+                aria-labelledby="1-tab"
+              >
+                <div className="row">{listMovies}</div>
               </div>
             </div>
           </div>
-          {/* end content tabs */}
-        </div>
-      </section>
+        </section>
+      </>
     );
   }
 
   componentDidMount() {
-    MovieApi.getMovies().then(movies => {
+    MovieApi.getMovies().then((movies) => {
       let state = this.state;
       state.movies = movies;
-      this.setState(state)
-    })
+      this.setState(state);
+    });
   }
 }
 
