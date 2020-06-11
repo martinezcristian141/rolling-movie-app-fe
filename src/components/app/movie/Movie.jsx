@@ -5,33 +5,23 @@ import "../../app/main.css";
 class Movie extends React.Component {
   render() {
     return (
-      <section
-        className="section section--details section--bg"
-        data-bg="img/section/details.jpg"
-      >
-        {/* details content */}
+      <section className="section section--details section--bg">
         <div className="container">
           <div className="row">
-            {/* title */}
             <div className="col-12">
               <h1 className="section__title">I Dream in Another Language</h1>
             </div>
-            {/* end title */}
 
-            {/* content */}
             <div className="col-12 col-lg-6">
               <div className="card card--details">
                 <div className="row">
-                  {/* card cover */}
                   <div className="col-12 col-sm-5 col-lg-6 col-xl-5">
                     <div className="card__cover">
                       <img src="img/covers/cover.jpg" alt="" />
                       <span className="card__rate card__rate--green">8.4</span>
                     </div>
                   </div>
-                  {/* end card cover */}
 
-                  {/* card content */}
                   <div className="col-12 col-sm-7 col-lg-6 col-xl-7">
                     <div className="card__content">
                       <ul className="card__meta">
@@ -60,34 +50,72 @@ class Movie extends React.Component {
                           <span>Country:</span> <a href="#">USA</a>
                         </li>
                       </ul>
-                      <div className="b-description_readmore_wrapper js-description_readmore_wrapper">
-                        <div className="card__description b-description_readmore_ellipsis">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout. The point of using Lorem Ipsum
-                          is that it has a more-or-less normal distribution of
-                          letters, as opposed to using 'Content here, content
-                          here', making it look like readable English. Many
-                          desktop publishing packages and web page editors now
-                          use Lorem Ipsum as their default model text, and a
-                          search for 'lorem ipsum' will uncover many web sites
-                          still in their infancy.
-                        </div>
-                        <div className="b-description_readmore_button"></div>
+                      <div className="card__description">
+                        It is a long established fact that a reader will be
+                        distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is
+                        that it has a more-or-less normal distribution of
+                        letters, as opposed to using 'Content here, content
+                        here', making it look like readable English. Many
+                        desktop publishing packages and web page editors now use
+                        Lorem Ipsum as their default model text, and a search
+                        for 'lorem ipsum' will uncover many web sites still in
+                        their infancy.
                       </div>
                     </div>
                   </div>
-                  {/* end card content */}
                 </div>
               </div>
             </div>
-            {/* end content */}
 
-            {/* player */}
-            <div className="col-12 col-lg-6">Player</div>
+            <div className="col-12 col-lg-6">
+              <video
+                controls
+                crossorigin
+                playsinline
+                poster="../../../cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+                id="player"
+              >
+                <source
+                  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+                  type="video/mp4"
+                  size="576"
+                />
+                <source
+                  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
+                  type="video/mp4"
+                  size="720"
+                />
+                <source
+                  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"
+                  type="video/mp4"
+                  size="1080"
+                />
+
+                <track
+                  kind="captions"
+                  label="English"
+                  srclang="en"
+                  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+                  default
+                />
+                <track
+                  kind="captions"
+                  label="Français"
+                  srclang="fr"
+                  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt"
+                />
+
+                <a
+                  href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+                  download
+                >
+                  Download
+                </a>
+              </video>
+            </div>
           </div>
         </div>
-        {/* end details content */}
       </section>
     );
   }
