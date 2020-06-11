@@ -1,4 +1,4 @@
-const baseUrl = process.env.API_BASE_URL || 'http://localhost:3001'
+const baseUrl = process.env.API_BASE_URL || 'https://rolling-code-api.herokuapp.com'
 
 const MovieApi = {
     getMovies: async () => {
