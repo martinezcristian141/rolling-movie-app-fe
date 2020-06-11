@@ -1,15 +1,22 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import MovieApi from '../../../services/MovieApi'
 import "../../app/main.css";
 
 class Movie extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      movie: { genres: [] }
+    }
+  }
   render() {
     return (
       <section className="section section--details section--bg">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1 className="section__title">I Dream in Another Language</h1>
+              <h1 className="section__title">{this.state.movie.title}</h1>
             </div>
 
             <div className="col-12 col-lg-6">
@@ -17,8 +24,8 @@ class Movie extends React.Component {
                 <div className="row">
                   <div className="col-12 col-sm-5 col-lg-6 col-xl-5">
                     <div className="card__cover">
-                      <img src="img/covers/cover.jpg" alt="" />
-                      <span className="card__rate card__rate--green">8.4</span>
+                      <img src={this.state.movie.poster_url} alt="" />
+                      <span className="card__rate card__rate--green">{this.state.movie.rating || '0.0'}</span>
                     </div>
                   </div>
 
@@ -29,16 +36,12 @@ class Movie extends React.Component {
                           <span>Director:</span> Vince Gilligan
                         </li>
                         <li>
-                          <span>Cast:</span> <a href="#">Brian Cranston</a>{" "}
-                          <a href="#">Jesse Plemons</a>{" "}
-                          <a href="#">Matt Jones</a>{" "}
-                          <a href="#">Jonathan Banks</a>,{" "}
-                          <a href="#">Charles Baker</a>{" "}
-                          <a href="#">Tess Harper</a>
+                          <span>Actores:</span>
+                          <Link to="/#">{this.state.movie.actors}</Link>
                         </li>
                         <li>
-                          <span>Genre:</span> <a href="#">Action</a>
-                          <a href="#">Triler</a>
+                          <span>Genre:</span> 
+                          <a href="#">{this.state.movie.genres.length ? this.state.movie.genres.join(',') : 'Sin Genero' }</a>
                         </li>
                         <li>
                           <span>Release year:</span> 2019
@@ -47,21 +50,10 @@ class Movie extends React.Component {
                           <span>Running time:</span> 130 min
                         </li>
                         <li>
-                          <span>Country:</span> <a href="#">USA</a>
+                          <span>Country:</span> <a href="/#">USA</a>
                         </li>
                       </ul>
-                      <div className="card__description">
-                        It is a long established fact that a reader will be
-                        distracted by the readable content of a page when
-                        looking at its layout. The point of using Lorem Ipsum is
-                        that it has a more-or-less normal distribution of
-                        letters, as opposed to using 'Content here, content
-                        here', making it look like readable English. Many
-                        desktop publishing packages and web page editors now use
-                        Lorem Ipsum as their default model text, and a search
-                        for 'lorem ipsum' will uncover many web sites still in
-                        their infancy.
-                      </div>
+                      <div className="card__description">{this.state.movie.synopsis}</div>
                     </div>
                   </div>
                 </div>
@@ -118,6 +110,16 @@ class Movie extends React.Component {
         </div>
       </section>
     );
+  }
+
+  componentDidMount() {
+    const id = this.props.match.params.movieId;
+    
+    MovieApi.getMovie(id).then(movie => {
+      let state = this.state;
+      state.movie = movie;
+      this.setState(state)
+    })
   }
 }
 

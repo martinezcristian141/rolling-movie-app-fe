@@ -1,23 +1,21 @@
-const baseUrl = process.env.API_BASE_URL || 'localhost:3001'
+const baseUrl = process.env.API_BASE_URL || 'http://localhost:3001'
 
-const MovieAPI = {
-    getMovies: () => {
-        const path = '/api/v1/movies';
-        const url = `${baseUrl}${path}`;
-        const fetchMovies = await fetch(url);
+const MovieApi = {
+    getMovies: async () => {
+        const url = `${baseUrl}/movies`;
+        const fetchMovies = await fetch(url, { mode: 'cors' });
         const data = await fetchMovies.json();
-        const movies = data.results
+        const movies = await data.results
         return movies
     },
     createMovie: (movie) => {
 
     },
-    getMovie: (movie_id) => {
-        const path = '/api/v1/movies';
-        const url = `${baseUrl}${path}/${movie_id}`;
-        const fetchMovies = await fetch(url);
+    getMovie: async (movie_id) => {
+        const url = `${baseUrl}/movies/${movie_id}`;
+        const fetchMovies = await fetch(url, { mode: 'cors' });
         const data = await fetchMovies.json();
-        const movie = data.results
+        const movie = data
         return movie
     },
     updateMovie: (movie_id) => {},
@@ -27,3 +25,5 @@ const MovieAPI = {
     updateGenre: (genre_id) => {},
     deleteGenre: (genre_id) => {}
 }
+
+export default MovieApi

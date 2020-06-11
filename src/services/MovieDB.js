@@ -2,8 +2,8 @@ const apiKey = process.env.REACT_APP_API_KEY || '5fb02133a714654cb98bd76003d11be
 
 const MovieDB = {
     movies: async (pageNumber, sortBy) => {
-        const baseURL = `https://api.themoviedb.org/3/movie/${sortBy}?api_key=${apiKey}&language=en-US&page=${pageNumber}`
-        const fetchURL = await fetch(baseURL)
+        const baseURL = `http://localhost:3001/movies`
+        const fetchURL = await fetch(baseURL, {mode: 'cors'})
         const data = await fetchURL.json()
         const movies = await data.results
         const movieArray = await movies.map(movie => {
